@@ -16,8 +16,6 @@ func main() {
 	}
 	// expect a second arg to be a free port
 	connPort := ":" + cmdArgs[1]
-	// expect a third arg to be a max amount of conns
-	connsMaxAmount := cmdArgs[2]
 	// Listen for incoming connections.
 	l, err := net.Listen("tcp", connPort)
 	if err != nil {
@@ -35,8 +33,6 @@ func main() {
 			fmt.Println("Error accepting: ", err.Error())
 			os.Exit(1)
 		}
-		if len(conns) 		
-		conns = append(conns, conn)
 		// Handle connections in a new goroutine.
 		go handleRequest(conn)
 	}
